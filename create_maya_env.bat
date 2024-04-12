@@ -1,11 +1,11 @@
 @echo off
 
 set "TOOLS_NAME=soncho_maya_samples"
-for %%I in ("%~dp0..\%TOOLS_NAME%") do set "TOOLS_PATH=%%~fI"
+set "TOOLS_FOLDER=%~dp0"
+set "TOOLS_PATH=%TOOLS_FOLDER%%TOOLS_NAME%"
 
 set MAYA_VERSION=2025
 set "MAYA_DEFAULT_WORKSPACE=C:\Users\%username%\Documents\maya\%MAYA_VERSION%"
-
 
 IF EXIST "%MAYA_DEFAULT_WORKSPACE%\Maya.env" (
     echo Maya.env file already exists.
